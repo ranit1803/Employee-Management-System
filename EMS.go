@@ -24,10 +24,9 @@ type Employee struct {
 var employees = make(map[int]Employee)
 var nextID int = 1
 
-// clearInputBuffer clears any leftover input in the buffer
 func clearInputBuffer() {
 	reader := bufio.NewReader(os.Stdin)
-	reader.ReadString('\n') // Discard input buffer
+	reader.ReadString('\n')
 }
 
 func addEmployee(name, dept string, salary, age int, address, contact, email, designation, gender, status string) {
@@ -138,7 +137,7 @@ func main() {
 				clearInputBuffer()
 				continue
 			}
-			clearInputBuffer() // Clear the input buffer after reading salary
+			clearInputBuffer() 
 
 			fmt.Print("Enter Employee Age: ")
 			_, err = fmt.Scan(&age)
@@ -147,7 +146,7 @@ func main() {
 				clearInputBuffer()
 				continue
 			}
-			clearInputBuffer() // Clear the input buffer after reading age
+			clearInputBuffer() 
 
 			fmt.Print("Enter Employee Address: ")
 			address, _ = reader.ReadString('\n')
@@ -179,7 +178,7 @@ func main() {
 			var id int
 			fmt.Print("Enter Employee ID: ")
 			fmt.Scan(&id)
-			clearInputBuffer() // Clear the input buffer after reading ID
+			clearInputBuffer() 
 
 			if _, exists := employees[id]; !exists {
 				fmt.Println("Employee Not Found!")
@@ -199,11 +198,11 @@ func main() {
 
 			fmt.Print("Enter Employee Salary: ")
 			fmt.Scan(&salary)
-			clearInputBuffer() // Clear the input buffer after reading salary
+			clearInputBuffer() 
 
 			fmt.Print("Enter Employee Age: ")
 			fmt.Scan(&age)
-			clearInputBuffer() // Clear the input buffer after reading age
+			clearInputBuffer() 
 
 			fmt.Print("Enter Employee Address: ")
 			address, _ = reader.ReadString('\n')
@@ -235,7 +234,7 @@ func main() {
 			var id int
 			fmt.Print("Enter Employee ID: ")
 			fmt.Scan(&id)
-			clearInputBuffer() // Clear the input buffer after reading ID
+			clearInputBuffer() 
 			removeEmployee(id)
 
 		case 4:
